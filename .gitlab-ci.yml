@@ -1,0 +1,36 @@
+stages:
+  - code_quality
+
+include:
+  # Case 1 Lint
+  # stages: code_quality
+#  - local: ci-configs/case-1-lint/linting_job.yml
+# # Case 2 Test
+# # stages: code_quality, test
+ - local: ci-configs/case-2-test/lint.yml
+ - local: ci-configs/case-2-test/coverage.yml
+ - local: ci-configs/case-2-test/unit_test.yml
+
+# # Case 3 Build
+# # stages: code_quality, test, build, build_image
+# - local: ci-configs/case-3-build/lint.yml
+# - local: ci-configs/case-3-build/coverage.yml
+# - local: ci-configs/case-3-build/unit_test.yml
+# - local: ci-configs/case-3-build/build.yml
+# - local: ci-configs/case-3-build/build_image.yml
+
+# Case 4 Security
+# stages: code_quality, security_checks, build_image, test_image
+# - local: ci-configs/case-4-security/build_image.yml
+# - local: ci-configs/case-4-security/container_scan.yml
+# - local: ci-configs/case-4-security/sast.yml
+# - local: ci-configs/case-4-security/secret_detection.yml
+
+# # Case 5 Docs
+# # stages: code_quality, build, deploy
+# - local: ci-configs/case-5-docs/lint_docs.yml
+# - local: ci-configs/case-5-docs/generate_docs.yml
+# - local: ci-configs/case-5-docs/pages.yml
+
+# # Case 6: Automate all the things!
+# # I challenge you to put everthing together and become the pipeline master!
